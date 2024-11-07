@@ -1,5 +1,6 @@
 package es.iesjandula.MatriculaHorarios.models;
 
+import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -13,15 +14,21 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "matricula")
-public class Matricula 
-{
+public class Matricula {
 
+    @EmbeddedId
+    private MatriculaId idMatricula;
+    
     @ManyToOne
-    @JoinColumn(name = "alumnoId", referencedColumnName = "idAlumno")
-    private Alumno alumno; 
-
+    @JoinColumn(name = "alumno_id", referencedColumnName = "idAlumno", insertable = false, updatable = false)
+    private Alumno alumno;
+    
     @ManyToOne
-    @JoinColumn(name = "asignaturaId", referencedColumnName = "idAsignatura")  
-    private Asignatura asignatura; 
-
+    @JoinColumn(name = "asignatura_curso", referencedColumnName = "curso", insertable = false, updatable = false)
+    @JoinColumn(name = "asignatura_etapa", referencedColumnName = "etapa", insertable = false, updatable = false)
+    @JoinColumn(name = "asignatura_grupo", referencedColumnName = "grupo", insertable = false, updatable = false)
+    @JoinColumn(name = "asignatura_nombre", referencedColumnName = "nombre", insertable = false, updatable = false)
+    @JoinColumn(name = "asignatura_departamentoPropietario", referencedColumnName = "departamentoPropietario", insertable = false, updatable = false)
+    @JoinColumn(name = "asignatura_departamentoReceptor", referencedColumnName = "departamentoReceptor", insertable = false, updatable = false)
+    private Asignatura asignatura;
 }

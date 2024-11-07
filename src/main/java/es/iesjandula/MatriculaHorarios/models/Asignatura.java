@@ -14,19 +14,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "asignatura")
-public class Asignatura 
-{
+public class Asignatura {
 
     @EmbeddedId
     private AsignaturaId idAsignatura;
 
     @ManyToOne
     @JoinColumn(name = "departamentoPropietario", referencedColumnName = "nombre", insertable = false, updatable = false)
-    private Departamento departamentosPropietario;
+    private Departamento departamentoPropietario;
 
     @ManyToOne
     @JoinColumn(name = "departamentoReceptor", referencedColumnName = "nombre", insertable = false, updatable = false)
-    private Departamento departamentosReceptor;
+    private Departamento departamentoReceptor;
     
     @ManyToOne
     @JoinColumn(name = "bloque_id", referencedColumnName = "idBloque")

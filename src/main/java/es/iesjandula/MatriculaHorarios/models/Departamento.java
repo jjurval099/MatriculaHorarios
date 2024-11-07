@@ -23,9 +23,9 @@ public class Departamento
     @Column(length = 50, nullable = false)
     private String nombre;
     
-    @OneToMany(mappedBy = "departamentosPropietario")
+    @OneToMany(mappedBy = "departamentoPropietario")
     private List<Asignatura> asignaturaPropietario;
     
-    @OneToMany(mappedBy = "departamentosReceptor")
+    @OneToMany(mappedBy = "departamentoReceptor")
     private List<Asignatura> asignaturaReceptor;
 }
