@@ -1,5 +1,6 @@
 package es.iesjandula.MatriculaHorarios.models;
 
+import es.iesjandula.MatriculaHorarios.models.Departamento;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;

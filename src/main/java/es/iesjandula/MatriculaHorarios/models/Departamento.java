@@ -22,10 +22,14 @@ public class Departamento
     @Id
     @Column(length = 50, nullable = false)
     private String nombre;
-    
+    /**
     @OneToMany(mappedBy = "departamentoPropietario")
     private List<Asignatura> asignaturaPropietario;
     
     @OneToMany(mappedBy = "departamentoReceptor")
     private List<Asignatura> asignaturaReceptor;
+    */
+    
+    @OneToMany(mappedBy = "nombreDepartamento")
+	private List<Profesor> nombreDepartamento;
 }
